@@ -64,7 +64,7 @@ namespace System.Windows.Markup
         {
             ServiceProvider serviceProviderAsServiceProvider = (ServiceProvider)serviceProvider;
             Type targetType;
-            if(serviceProviderAsServiceProvider.TargetProperty as DependencyProperty != null)
+            if (serviceProviderAsServiceProvider.TargetProperty as DependencyProperty != null)
             {
                 targetType = ((DependencyProperty)serviceProviderAsServiceProvider.TargetProperty).PropertyType;
             }
@@ -90,7 +90,7 @@ namespace System.Windows.Markup
                             resourceDictionary = parentAsFrameworkElement.Resources;
                         }
                     }
-                    if (resourceDictionary != null && resourceDictionary.ContainsKey(ResourceKey))
+                    if (resourceDictionary != null && resourceDictionary.Contains(ResourceKey))
                     {
                         object returnElement = resourceDictionary[ResourceKey];
                         if (!object.Equals(returnElement, elementItself))
@@ -101,7 +101,7 @@ namespace System.Windows.Markup
                 }
                 isFirst = false;
             }
-            if (Application.Current.Resources.ContainsKey(ResourceKey))
+            if (Application.Current.Resources.Contains(ResourceKey))
             {
                 return this.EnsurePropertyType(Application.Current.Resources[ResourceKey], targetType);
             }
@@ -120,7 +120,7 @@ namespace System.Windows.Markup
 
         private object EnsurePropertyType(object item, Type targetType)
         {
-            if(targetType == null || item == null)
+            if (targetType == null || item == null)
             {
                 return item;
             }

@@ -54,6 +54,9 @@ namespace Windows.UI.Xaml
         static Dictionary<string, string> _resourcesCache = null;
         INTERNAL_XamlResourcesHandler _xamlResourcesHandler = new INTERNAL_XamlResourcesHandler();
 
+        // Says if App.Resources has any implicit styles
+        internal bool HasImplicitStylesInResources { get; set; }
+
         /// <summary>
         /// Gets the Application object for the current application.
         /// </summary>
